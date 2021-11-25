@@ -1,5 +1,6 @@
-Buggy Data Base (Projeto 1 FP)
-
+__Buggy Data Base (Projeto 1 FP)__
+___
+- NOTA: 19.2/20.0
 - Automática (Mooshak): 16.0/16.0
 - Qualidade do Código: 3.2/4.0
   * Boa Práticas: 1.2/1.5
