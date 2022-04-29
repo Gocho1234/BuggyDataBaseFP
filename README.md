@@ -1,9 +1,5 @@
-__Buggy Data Base (Projeto 1 FP)__
+__Buggy Data Base (Project 1 FProg)__
 ___
-- NOTA: 19.2/20.0
-- Automática (Mooshak): 16.0/16.0
-- Qualidade do Código: 3.2/4.0
-  * Boa Práticas: 1.2/1.5
-  * Comentários: 1.0/1.0
-  * Abstração Procedimental: 0.5/1.0
-  * Nomes: 0.5/0.5
+This project consisted in creating functions to solve five different independent tasks in order to identify and correct problems in a data base (Buggy Data Base, BDB) which has become corrupted for some odd reason.
+
+[Project Statement](docs/FP2122P1.pdf)
