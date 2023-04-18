@@ -1,3 +1,5 @@
+# https://github.com/diogotcorreia/proj-ist-unit-tests/blob/master/fp/2021-2022/fp-p1/proj_tester.py
+
 import unittest
 import importlib.util
 import sys
@@ -62,10 +64,10 @@ class TestDocumentacao1(unittest.TestCase):
 
     def test_eh_anagrama_034(self):
         self.assertTrue(target.eh_anagrama("Amor", "Roma"))
-        
+
     def test_eh_anagrama_035(self):
         self.assertTrue(target.eh_anagrama("poder", "Pedro"))
-        
+
     def test_eh_anagrama_036(self):
         self.assertTrue(target.eh_anagrama("QuidEstVeritas", "EstVirQuiAdest"))
 
@@ -89,22 +91,22 @@ class TestDocumentacao1(unittest.TestCase):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.corrigir_doc(5)
         self.assertEqual("corrigir_doc: argumento invalido", str(ctx.exception))
-        
+
     def test_corrigir_doc_038(self):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.corrigir_doc(())
         self.assertEqual("corrigir_doc: argumento invalido", str(ctx.exception))
-        
+
     def test_corrigir_doc_039(self):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.corrigir_doc(["a", "b", "c"])
         self.assertEqual("corrigir_doc: argumento invalido", str(ctx.exception))
-        
+
     def test_corrigir_doc_040(self):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.corrigir_doc(1234567)
         self.assertEqual("corrigir_doc: argumento invalido", str(ctx.exception))
-        
+
     def test_corrigir_doc_041(self):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.corrigir_doc("Fundamentos da Programacao.")
@@ -113,33 +115,33 @@ class TestDocumentacao1(unittest.TestCase):
     def test_corrigir_doc_042(self):
         doc = "Fundamentos da Programacao"
         self.assertEqual("Fundamentos da Programacao", target.corrigir_doc(doc))
-        
+
     def test_corrigir_doc_043(self):
         doc = "Fundamentos da Programacao e Programacao com objetos"
         self.assertEqual("Fundamentos da Programacao e Programacao com objetos", target.corrigir_doc(doc))
-        
+
     def test_corrigir_doc_044(self):
         doc = "Fundamentos da Programacao e programacao com objetos"
         self.assertEqual("Fundamentos da Programacao e programacao com objetos", target.corrigir_doc(doc))
-        
+
     def test_corrigir_doc_045(self):
         doc = "Programacao com objetos e bojetos"
         self.assertEqual("Programacao com objetos e", target.corrigir_doc(doc))
-        
+
     def test_corrigir_doc_046(self):
         doc = "FuKknfbBFdamvVEIicCeetTntUJjuos DddBfFbrRQKkquUlLNnajJ NnzZPnNrBbbBdDogDvVdrwoOWamTtaSfFscwkKWaouUtbBTKQqk"
         self.assertEqual("Fundamentos da Programacao", target.corrigir_doc(doc))
-        
+
     def test_corrigir_doc_047(self):
         doc = "ProgtBbTrajJmagGcaGgo FfZqQzcmYyQSsqMomPZzUuERraAJjep JjFfqQobjKkuUkKetQqSspPCcAaEeovVTtSvVtTvVss eMmlxqQXOoIiLLlOo XxbhHodDWwjejJtwWoOos"
         self.assertEqual("Programacao com objetos e", target.corrigir_doc(doc))
-        
+
     def test_corrigir_doc_048(self):
         doc = "ErgGAaxXrRhVvHsSUuJjapPnN WwNnXxgGXxlLMmYyla sgGAauOyEeYoTtmsSoOwkKWaGg CtTcpiIPZJcCjzShHkKsBbmuzVvzZkKdBbDZGgYyszZa sNnjoOJbBTtouvenXxCTtcidDr HGguUYyhdBaAbPpKkeZzlCc univeZUubYRvVryBzKkiIrLlNnsMmLnNlo IiFfaAlOoVuUjJAavPpiIaMmdHhDBbgG ixXiIPpnmacutlLTzZlrRadIia cXtTxayYyYlyiIYumnuUiAaaSsdEejJa DdbiIryYiLjJloJjfFSsBbAWwayYyYsCcpGgGgPgGaaA uUdDIhHiwWyPTtpBbhvVHIiYUvwWVuCcy sLlCQqFfPphHHhLlcoDdgGxXPpFfIibBbriTJjaAtaQqsS drRDmadDrBseESbizZonTtFfUucCeta LoOlmhHonhHbaABeHoOhtaRiIrrMmiuDdUwWaLEeljJZz danesa de"
         self.assertEqual("Era la suma souvenir del la inmaculada briosa y marioneta danesa de", target.corrigir_doc(doc))
 
-        
-                
+
+
 class TestPIN2(unittest.TestCase):
     """
     obter_posicao, apenas um caractere + inteiro, dados oficiais não obtidos.
@@ -254,23 +256,23 @@ class TestPIN2(unittest.TestCase):
     def test_obter_posicao_36(self):
         self.assertEqual(9, target.obter_posicao("D", 9))
 
-        
+
     def test_obter_digito_008(self):
         self.assertEqual(1, target.obter_digito("CEE", 5))
 
     def test_obter_digito_057(self):
         self.assertEqual(5, target.obter_digito("DDCEDEB", 3))
-       
+
     def test_obter_digito_058(self):
         self.assertEqual(8, target.obter_digito("DDCEDEB", 8))
-       
+
     def test_obter_digito_059(self):
         self.assertEqual(8, target.obter_digito("DDCEDEB", 9))
-        
+
     def test_obter_digito_060(self):
         self.assertEqual(8, target.obter_digito("DBDEBCBEBD", 5))
-       
-    
+
+
     def test_obter_pin_009(self):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.obter_pin(())
@@ -279,7 +281,7 @@ class TestPIN2(unittest.TestCase):
     def test_obter_pin_010(self):
         t = ("CEE", "DDBBB", "ECDBE", "CCCCB")
         self.assertEqual((1, 9, 8, 5), target.obter_pin(t))
-        
+
     def test_obter_pin_061(self):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.obter_pin(25)
@@ -289,7 +291,7 @@ class TestPIN2(unittest.TestCase):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.obter_pin(("CEE"))
         self.assertEqual("obter_pin: argumento invalido", str(ctx.exception))
-    
+
     def test_obter_pin_063(self):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.obter_pin(["CEE", "DDBBB", "ECDBE", "CCCCB"])
@@ -304,7 +306,7 @@ class TestPIN2(unittest.TestCase):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.obter_pin(("CEE", "DDBBB", "", "CCCCB"))
         self.assertEqual("obter_pin: argumento invalido", str(ctx.exception))
-        
+
     def test_obter_pin_066(self):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.obter_pin(("DDBBB", "ECDBE", "CCCCB"))
@@ -313,17 +315,17 @@ class TestPIN2(unittest.TestCase):
     def test_obter_pin_067(self):
         t = ("BCCDBDCE", "BDEEC", "EDCCEBB", "EECCDBEBC")
         self.assertEqual((2, 1, 7, 4), target.obter_pin(t))
-        
+
     def test_obter_pin_068(self):
         t = ("DBCDEE", "DDDDE", "DCE", "BB", "EDDD", "BD")
         self.assertEqual((4, 5, 2, 8, 9, 9), target.obter_pin(t))
-        
+
     def test_obter_pin_069(self):
         t = ("BDD", "BBBEE", "BCCBEE", "EDCCDB", "EDECD", "DDCED", "CB", "BCE", "DCB", "CEBCEB")
         self.assertEqual((9, 7, 4, 6, 3, 3, 6, 5, 6, 4), target.obter_pin(t))
-        
 
-        
+
+
 class TestVerificacaoDados3(unittest.TestCase):
     def test_eh_entrada_011(self):
         self.assertFalse(target.eh_entrada(("a-b-c-d-e-f-g-h", "[abcd]", (950, 300))))
@@ -333,7 +335,7 @@ class TestVerificacaoDados3(unittest.TestCase):
 
     def test_eh_entrada_013(self):
         self.assertTrue(target.eh_entrada(("a-b-c-d-e-f-g-h", "[xxxxx]", (950, 300))))
-        
+
     def test_eh_entrada_018(self):
         self.assertTrue(target.eh_entrada(("qgfo-qutdo-s-egoes-wzegsnfmjqz", "[abcde]", (2223, 424, 1316, 99))))
 
@@ -404,7 +406,7 @@ class TestVerificacaoDados3(unittest.TestCase):
     def test_validar_cifra_089(self):
         self.assertTrue(target.validar_cifra("lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-ut-enim-ad-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat-duis-aute-irure-dolor-in-reprehenderit-in-voluptate-velit-esse-cillum-dolore-eu-fugiat-nulla-pariatur-excepteur-sint-occaecat-cupidatat-non-proident-sunt-in-culpa-qui-officia-deserunt-mollit-anim-id-est-laborum", "[ietao]"))
 
-    
+
     def test_filtrar_bdb_016(self):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.filtrar_bdb(" ")
@@ -484,7 +486,7 @@ class TestVerificacaoDados3(unittest.TestCase):
         )
 
 
-        
+
 class TesteDesencriptacaoDeDados4(unittest.TestCase):
     def test_obter_num_seguranca_019(self):
         self.assertEqual(325, target.obter_num_seguranca((2223, 424, 1316, 99)))
@@ -500,7 +502,7 @@ class TesteDesencriptacaoDeDados4(unittest.TestCase):
 
     def test_obter_num_seguranca_099(self):
         self.assertEqual(1, target.obter_num_seguranca((79, 1289, 589, 144, 1230, 275, 1016, 1200, 1933, 1383, 446, 795, 277, 1941, 1190, 441, 1788, 583, 1653, 1551, 56, 1286, 251, 1365, 723, 1501, 644, 1964, 404, 1631, 732, 252, 677, 1625, 902, 422, 131, 288, 136, 1387, 31, 1368, 20, 619, 1027, 475, 1256, 435, 1237, 387, 156, 385, 1013, 967, 1208, 1868, 386, 900, 675, 1191, 1627, 1437, 704, 1900, 591, 1145, 1275, 1296, 707, 1494, 1002, 1421, 99, 1774, 1334, 1283, 290, 548, 1127, 1199, 1515, 595, 297, 1339, 1700, 1748, 1390, 201, 216, 274, 266, 379)))
-        
+
 
     def test_decifrar_texto_020(self):
         self.assertEqual(
@@ -557,7 +559,7 @@ class TesteDesencriptacaoDeDados4(unittest.TestCase):
         with self.assertRaises(ValueError, msg="ValueError not raised") as ctx:
             target.decifrar_bdb((('bfaudoyod-q-yiuha-rwjs', '[adouy]', (2, 795, 3223, 4316)), ('lctlgukvzwy-ji-xxwmzgugkgw', '[abxyz]', (2388, 367, 5999)), ('nyccjoj-vfrex-ncalml', '[xxxxx]', (50, 404))))
         self.assertEqual("decifrar_bdb: argumento invalido", str(ctx.exception))
-        
+
     def test_decifrar_bdb_105(self):
         bdb = [
             ('bfaudoyod-q-yiuha-rwjs', '[adouy]', (2, 795, 3223, 4316)),
@@ -585,9 +587,9 @@ class TesteDesencriptacaoDeDados4(unittest.TestCase):
             ],
             target.decifrar_bdb(bdb),
         )
-       
-    
-    
+
+
+
 class TestDepuracao5(unittest.TestCase):
     def test_eh_utilizador_023(self):
         """
@@ -739,8 +741,8 @@ class TestDepuracao5(unittest.TestCase):
                 }
             )
         )
-        
-    
+
+
     def test_eh_senha_valida_025(self):
         """
         Exemplo enunciado ('aabcd', {'vals': (1,3), 'char':'a'})
